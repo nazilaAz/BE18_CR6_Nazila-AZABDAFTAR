@@ -104,16 +104,17 @@ header {
     }
 }
 
-// .danceIcon {
-//     width: 8vw;
-//     // height: 5vh;
-//     margin-top: 70vh;
-//     margin-left: 4rem;
-// }
-// .danceText {
-//     display: inline-block;
-//     margin-right: 90rem;
-// }
+.btn {
+    background-color: rgb(11, 49, 49);
+    color: #fff;
+    transition: all .7s;
+    &:hover {
+        color: rgb(11, 49, 49);
+        background-color: #fff;
+        border-color: rgb(11, 49, 49);
+    }
+}
+
 .page-bg,
 .animation-wrapper {
     // position: fixed;
