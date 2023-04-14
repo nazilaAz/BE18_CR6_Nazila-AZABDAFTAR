@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{# {% block boosstrap %}{{ parent() }}{% endblock %} #}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('/Css/style.css') }}">
+{% endblock %}
+{% block body %}
+	{% block header %}
+		{{ parent() }}
+	{% endblock %}
+	{% block custom %}
+		<div class="container mt-5">
+			<div class="row">
+				<div class="card col-md-12 p-3">
+					<div class="row ">
+						<div class="col-md-4">
+							<img class="w-100 h-100" src="{{event.image}}">
+						</div>
+						<div class="col-md-8">
+							<div class="card-block">
+								<h6 class="card-title">{{event.name}}</h6>
+								<p class="card-text text-justify">{{event.type}}</p>
+								<p class="card-text text-justify">{{event.description}}</p>
+								<p class="card-text text-justify">{{event.date|date()}}</p>
+								<p class="card-text text-justify">{{event.email}}</p>
+								<p class="card-text text-justify">{{event.phone}}</p>
+								<p class="card-text text-justify">{{event.address}}</p>
+								<a href="#" class="btn">read more...</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+{% endblock %}
