@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap');
+$backGr-main:#D21312;
+$fontColor-first: #ED2B2A;
+$colorLightRed:#F15A59;
+$greencolor:#87CBB9;
+$color-bg: #111;
+$color-particle: #fff;
+$color-lightYellow:honeydew;
+$color-orange:#ff6933;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 600s;
+
+/* Pauls awesome mixin */
+
+@function particles($max) {
+    $val: 0px 0px $color-particle;
+    @for $i from 1 through $max {
+        $val: #{$val},
+        random($spacing)+px random($spacing)+px $color-particle;
+    }
+    @return $val;
+}
+
+@mixin particles($max) {
+    box-shadow: particles($max);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+// body {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 16px;
+//     overflow: hidden;
+// }
+header {
+    nav {
+        position: fixed;
+        .navbar-brand {
+            font-family: 'MuseoModerno', cursive !important;
+            margin-left: 3rem;
+            font-size: 2rem;
+            color: $backGr-main;
+        }
+        .container-fluid {
+            width: 100vw;
+            margin: 0 auto;
+            .nav-link {
+                margin-right: 3rem;
+            }
+        }
+        .navbar-nav {
+            a {
+                background-image: linear-gradient(to right, $greencolor, $greencolor 50%, $fontColor-first 50%);
+                background-size: 200% 100%;
+                background-position: -100%;
+                display: inline-block;
+                padding: 0 .8rem;
+                position: relative;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: all 0.3s ease-in-out;
+                &:before {
+                    content: '';
+                    background: $greencolor;
+                    display: block;
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    width: 0;
+                    height: 3px;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover {
+                    background-position: 0;
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.flexDance {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 70vh;
+    margin-left: 4rem;
+    .danceIcon {
+        width: 8vw;
+    }
+    .danceText {
+        align-self: center;
+        font-family: 'Advent Pro', sans-serif;
+    }
+}
+
+// .danceIcon {
+//     width: 8vw;
+//     // height: 5vh;
+//     margin-top: 70vh;
+//     margin-left: 4rem;
+// }
+// .danceText {
+//     display: inline-block;
+//     margin-right: 90rem;
+// }
+.page-bg,
+.animation-wrapper {
+    // position: fixed;
+    position: absolute;
+    // top: 5rem;
+    // left: 0;
+    width: 100vw;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+.page-bg {
+    background: $color-bg url("https://cdn.pixabay.com/photo/2015/11/22/19/04/crowd-1056764_960_720.jpg") no-repeat top center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.particle,
+.particle:after {
+    background: transparent;
+}
+
+.particle:after {
+    position: absolute;
+    content: "";
+    top: $spacing;
+}
+
+.particle-1 {
+    animation: animParticle $time-1 linear infinite;
+    @include particles(600);
+    height: 1px;
+    width: 1px;
+}
+
+.particle-1:after {
+    @include particles(600);
+    height: 1px;
+    width: 1px;
+}
+
+.particle-2 {
+    animation: animParticle $time-2 linear infinite;
+    @include particles(200);
+    height: 2px;
+    width: 2px;
+}
+
+.particle-2:after {
+    @include particles(200);
+    height: 2px;
+    width: 2px;
+}
+
+.particle-3 {
+    animation: animParticle $time-3 linear infinite;
+    @include particles(100);
+    height: 3px;
+    width: 3px;
+}
+
+.particle-3:after {
+    @include particles(100);
+    height: 3px;
+    width: 3px;
+}
+
+.particle-4 {
+    animation: animParticle $time-4 linear infinite;
+    @include particles(400);
+    height: 1px;
+    width: 1px;
+}
+
+.particle-4:after {
+    @include particles(400);
+    height: 1px;
+    width: 1px;
+}
+
+@keyframes animParticle {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY($spacing * -1);
+    }
+}
+
+.page-wrapper {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    height: 20rem;
+}

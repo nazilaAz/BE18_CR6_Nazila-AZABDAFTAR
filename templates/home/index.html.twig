@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+{% block boosstrap %}
+	{% include 'Components/boot.php' %}
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="Css/style.css">
+{% endblock %}
+{% block body %}
+	{% block header %}
+		{{ parent() }}
+	{% endblock %}
+	{% block hero %}
+		{{ parent() }}
+	{% endblock %}
+	{% block main %}
+		<div class="flexDance">
+			<img class="img-fluid danceIcon" src="https://img.freepik.com/premium-vector/butterfly-logo-icon-with-human-face_491211-23.jpg?w=826" alt="">
+			<h5 class="h5 danceText">
+				All Events in Vienna</h5>
+		</div>
+	{% endblock %}
+{% endblock %}
