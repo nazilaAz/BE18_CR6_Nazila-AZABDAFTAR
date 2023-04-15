@@ -95,7 +95,7 @@ class ManageEventController extends AbstractController
     }
 
     #[Route('/manage_event/find/{type}', name: 'app-manage_event-Find')]
-    public function findType($type): Response
+    public function findType(string $type): Response
     {
          $findType = $this->em->getRepository(Event::class)->findBy(['type' => $type]);
         //  dd($findType);

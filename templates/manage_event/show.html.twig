@@ -38,7 +38,7 @@
 								<p class="card-text text-justify">{{event.email}}</p>
 								<p class="card-text text-justify">{{event.phone}}</p>
 								<p class="card-text text-justify">{{event.address}}</p>
-								<a href="/" class="link-opacity-25-hover">Back</a><hr>
+								<a href="/" class="backLink link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"><i class="bi bi-arrow-left-square-fill"></i> Back to Home</a><hr>
 								<form method="post" action="{{ path('app-manage-delete', {'id': event.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
 
 								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">

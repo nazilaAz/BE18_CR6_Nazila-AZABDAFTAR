@@ -40,13 +40,6 @@ body {
     flex-direction: column;
 }
 
-// body {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: 16px;
-//     overflow: hidden;
-// }
 header {
     nav {
         // position: fixed;
@@ -95,6 +88,11 @@ header {
             }
         }
     }
+}
+
+.backLink {
+    text-decoration: none !important;
+    color: $colorLightRed !important;
 }
 
 .fieldset {
