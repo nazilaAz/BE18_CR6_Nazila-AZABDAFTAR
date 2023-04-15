@@ -24,62 +24,62 @@ class eventType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => "Event's name...",
                 ),
                 'label' => false,
             ])
             ->add('date', DateTimeType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                 ),
                 'label' => false,
             ])
             ->add('description', TextareaType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'Description...',
                 ),
                 'label' => false,
             ])
             ->add('image', TextType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'Link of Picture...',
                 ),
                 'label' => false,
             ])
             ->add('capacity', IntegerType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'Capacity...'
                 ),
                 'label' => false,
             ])
             ->add('email', EmailType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'Email...'
                 ),
                 'label' => false,
             ])
             ->add('phone', TextType::class, [
                 'attr' => array(
-                    'class' => 'form-control mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'Phone...'
                 ),
                 'label' => false,
             ])
             ->add('address', TextType::class, [
                 'attr' => array(
-                    'class' => 'form-control bg-transparent block mt-10 border-b-2 w-full h-60 text-6xl outline-none mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'Kärntner Straße 26,1010 Wien'
                 ),
                 'label' => false,
             ])
             ->add('URL', TextType::class, [
                 'attr' => array(
-                    'class' => 'form-control bg-transparent block mt-10 border-b-2 w-full h-60 text-6xl outline-none mt-3',
+                    'class' => 'form-control bg-dark text-light mt-3',
                     'placeholder' => 'URL'
                 ),
                 'label' => false,
@@ -94,15 +94,11 @@ class eventType extends AbstractType
                         'Painting' => 'Painting',
                         'Design' => 'Design',
                         'Classic' => 'Classic',],
-                        'attr' => array('class' => 'form-select mt-3',),
+                        'attr' => array('class' => 'form-select bg-dark text-light mt-3',),
                         'label' => false,
                 ],
-                // [
-                //     'attr' => array('class' => 'form-control bg-transparent block mt-10 border-b-2 w-full h-60 text-6xl outline-none mt-3',),
-                //     // 'required' => true,
-                // ]
             )
-            ->add('save', SubmitType::class,  ['attr' => array('class' => 'form-control btn mt-3', 'label' => 'Create New Event')]);
+            ->add('save', SubmitType::class,  ['attr' => array('class' => 'form-control-sm btn btn-outline-success mt-3', 'label' => 'Create New Event')]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

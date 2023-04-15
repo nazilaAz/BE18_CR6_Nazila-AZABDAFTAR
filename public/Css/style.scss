@@ -29,9 +29,15 @@ $time-4: 600s;
     box-shadow: particles($max);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 // body {
@@ -43,7 +49,7 @@ body {
 // }
 header {
     nav {
-        position: fixed;
+        // position: fixed;
         .navbar-brand {
             font-family: 'MuseoModerno', cursive !important;
             margin-left: 3rem;
@@ -93,13 +99,17 @@ header {
 
 .fieldset {
     margin: 1rem auto;
-    width: 70vw;
+    width: 50vw;
+    legend {
+        color: $color-particle !important;
+    }
 }
 
 .flexDance {
     display: flex;
     justify-content: flex-start;
-    margin-top: 80vh;
+    // margin-top: 34rem;
+    margin-bottom: 34rem;
     margin-left: 4rem;
     .danceIcon {
         width: 8vw;
@@ -110,14 +120,24 @@ header {
     }
 }
 
+.setMargin {
+    margin-top: 35rem !important;
+}
+
 .btn {
-    background-color: rgb(11, 49, 49);
-    color: #fff;
+    background-color: rgb(31, 90, 90);
+    color: $color-particle;
     transition: all .7s;
     &:hover {
-        color: rgb(11, 49, 49);
-        background-color: #fff;
-        border-color: rgb(11, 49, 49);
+        color: rgb(31, 90, 90);
+        background-color: $color-particle;
+        border-color: rgb(31, 90, 90);
+    }
+}
+
+form {
+    .btnDelete {
+        background-color: red;
     }
 }
 
@@ -125,17 +145,22 @@ header {
 .animation-wrapper {
     // position: fixed;
     position: absolute;
+    bottom: 0;
+    top: 0;
     // top: 5rem;
     // left: 0;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     margin: 0 auto;
+    z-index: -1;
 }
 
 .page-bg {
-    background: $color-bg url("https://cdn.pixabay.com/photo/2015/11/22/19/04/crowd-1056764_960_720.jpg") no-repeat top center;
+    background: $color-particle url("https://cdn.pixabay.com/photo/2015/11/22/19/04/crowd-1056764_960_720.jpg") no-repeat top center;
     background-size: cover;
     z-index: -1;
+    opacity: .89;
+    height: auto;
 }
 
 .particle,
@@ -146,7 +171,7 @@ header {
 .particle:after {
     position: absolute;
     content: "";
-    top: $spacing;
+    // top: $spacing;
 }
 
 .particle-1 {
@@ -212,7 +237,20 @@ header {
 
 .page-wrapper {
     text-align: center;
-    color: #fff;
+    color: $color-particle;
     z-index: 2;
     height: 20rem;
+}
+
+.footer {
+    height: 10rem;
+    background-color: $backGr-main;
+    margin-top: 1rem;
+    color: $color-particle;
+    // position: fixed;
+    // bottom: 0;
+    width: 100vw;
+    span {
+        color: $color-particle !important;
+    }
 }

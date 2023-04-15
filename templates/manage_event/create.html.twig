@@ -1,18 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{# {% block boosstrap %}{{ parent() }}{% endblock %} #}
+{% block title %}All Events in Vienna
+{% endblock %}
+{% block boosstrap %}
+	{% include 'Components/boot.php' %}
+{% endblock %}
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('/Css/style.css') }}">
 {% endblock %}
+
+
 {% block body %}
 	{% block header %}
 		{{ parent() }}
 	{% endblock %}
+
+	{% block hero %}
+		<div class="page-bg"></div>
+	{% endblock %}
+
+	<div class="page-wrapper"></div>
+
 	{% block custom %}
+
+		<div class="animation-wrapper">
+			<div class="particle particle-1"></div>
+			<div class="particle particle-2"></div>
+			<div class="particle particle-3"></div>
+			<div class="particle particle-4"></div>
+		</div>
+
 		<fieldset class="fieldset">
 			<legend>Add new Event</legend>
-		
-				{{ form(form, {'method': 'POST'}) }}
-			
-			</fieldset>
-		{% endblock %}
+
+			{{ form(form, {'method': 'POST'}) }}
+
+		</fieldset>
 	{% endblock %}
+	
+	{% block footer %}
+			
+	{% endblock %}
+{% endblock %}

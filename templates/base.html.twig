@@ -38,10 +38,32 @@
 									<a class="nav-link active" aria-current="page" href="/">Home</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/">Events</a>
+									<a class="nav-link" href="/manage_event/create">Create Event</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="/manage_event/create">CRUD</a>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Filter by
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="/manage_event/find/Dance">Dance</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="/manage_event/find/Theater">Theater</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="/manage_event/find/Opera">Opera</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="/manage_event/find/Painting">Painting</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="/manage_event/find/Classic">Classic</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="/manage_event/find/Design">Design</a>
+										</li>
+									</ul>
 								</li>
 							</ul>
 						</div>
@@ -56,7 +78,29 @@
 		{% block custom %}
 			<div class="container"></div>
 		{% endblock %}
+		{% block footer%}
+			<footer class="footer">
+				<div class="col-md-4 text-center w-100 align-items-center mx-4 pt-4">
+					<i class="bi bi-music-note-beamed"></i>
+					<span class="mb-3 mb-md-0 text-muted "> CodeReview 6, CodeFactory</span>
+				</div>
 
+				<ul class="col-md-4 list-unstyled ms-4">
+					<li class="ms-3">
+						<i class="bi bi-twitter"></i>
+					</li>
+					<li class="ms-3">
+						<i class="bi bi-facebook"></i>
+					</li>
+					<li class="ms-3">
+						<i class="bi bi-instagram"></i>
+					</li>
+					<li class="ms-3">
+						<i class="bi bi-youtube"></i>
+					</li>
+				</ul>
+			</footer>
+		{% endblock %}
 		{% block bootstrapjs %}
 			{% include 'Components/bootjs.php' %}
 		{% endblock %}
