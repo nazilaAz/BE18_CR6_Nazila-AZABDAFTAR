@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
 class HomeController extends AbstractController
 {
     private $em;
@@ -17,7 +18,7 @@ class HomeController extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/home', name: 'app_home')]
+    #[Route('/', name: 'app_home')]
     public function index(): Response
     {
          $allEvents = $this->em->getRepository(Event::class)->findAll();

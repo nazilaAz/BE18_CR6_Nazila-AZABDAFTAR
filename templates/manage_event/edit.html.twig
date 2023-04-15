@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{# {% block boosstrap %}{{ parent() }}{% endblock %} #}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('/Css/style.css') }}">
+{% endblock %}
+{% block body %}
+	{% block header %}
+		{{ parent() }}
+	{% endblock %}
+	{% block custom %}
+		<fieldset class="fieldset">
+			<legend>Edit</legend>
+		
+				{{ form(form, {'method': 'POST'}) }}
+			
+			</fieldset>
+		{% endblock %}
+	{% endblock %}

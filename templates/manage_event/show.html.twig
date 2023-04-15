@@ -24,7 +24,14 @@
 								<p class="card-text text-justify">{{event.email}}</p>
 								<p class="card-text text-justify">{{event.phone}}</p>
 								<p class="card-text text-justify">{{event.address}}</p>
-								<a href="#" class="btn">read more...</a>
+								<a href="/" class="btn">Back</a>
+								<form method="post" action="{{ path('app-manage-delete', {'id': event.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+
+								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
+
+								<button class="btn">Del</button>
+
+							</form>
 							</div>
 						</div>
 					</div>

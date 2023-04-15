@@ -59,7 +59,7 @@ header {
         }
         .navbar-nav {
             a {
-                background-image: linear-gradient(to right, $greencolor, $greencolor 50%, $fontColor-first 50%);
+                background-image: linear-gradient(to right, $greencolor, $greencolor 50%, $backGr-main 50%);
                 background-size: 200% 100%;
                 background-position: -100%;
                 display: inline-block;
@@ -68,9 +68,10 @@ header {
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 transition: all 0.3s ease-in-out;
+                font-weight: 500;
                 &:before {
                     content: '';
-                    background: $greencolor;
+                    background: $backGr-main;
                     display: block;
                     position: absolute;
                     bottom: -3px;
@@ -90,10 +91,15 @@ header {
     }
 }
 
+.fieldset {
+    margin: 1rem auto;
+    width: 70vw;
+}
+
 .flexDance {
     display: flex;
     justify-content: flex-start;
-    margin-top: 70vh;
+    margin-top: 80vh;
     margin-left: 4rem;
     .danceIcon {
         width: 8vw;
@@ -122,7 +128,7 @@ header {
     // top: 5rem;
     // left: 0;
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
     margin: 0 auto;
 }
 
